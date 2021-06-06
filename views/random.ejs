@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+
+    <div class="center" id="app">
+        <h1>
+            <%= title %>
+        </h1>
+        <img class="imagem" src="http://blog.alltheanime.com/wp-content/uploads/2018/02/kakegurui-02.png" alt="">
+        <h2>Vamos, será emocionante!!!</h2>
+        <button @click="gamble">
+            APOSTAR!
+        </button>
+        <h2>
+            {{resultado}}
+        </h2>
+    </div>
+
+
+</body>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: () => ({
+            resultado: "",
+        }),
+        methods: {
+            gamble() {
+                if (Math.random() > 0.5)
+                    this.resultado = "Você ganhou! Que emocionante, mal posso esperar pra apostar mais"
+                else
+                    this.resultado = "Você perdeu! Mas não se renda. Vamos, mostre seu potencial!"
+            }
+        }
+    })
+</script>
+
+<style>
+    .imagem {
+        height: 60vh;
+
+    }
+
+
+    .texto {
+        color: mediumblue;
+        box-shadow: midnightblue;
+        /* text-align: center; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .link {
+        margin-bottom: 5vh;
+    }
+
+    .center {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: vh;
+    }
+
+    .welcome {
+        height: 40vh;
+    }
+</style>
+
+</html>

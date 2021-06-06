@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <div id="app">
+        <img src="https://pbs.twimg.com/media/DlJFsw9W0AAcEc0?format=jpg&name=900x900" height="300"> </img>
+        <p> Olá amiguinho, você ja ouviu falar em números elevados à algum expoente? HAHHAHAHAHAHA</p>
+        <p> Por exemplo, 2^2, qual o resultado dessa operação? </p>
+        <p> Para resolver isso você deve multiplicar a base por ela mesma N vezes, sendo N o expoente da operação.</p>
+        <p> HAHAHAHAHAHAHAHAH, perdão, continuando..</p>
+        <p> Qual o resultado das seguintes operações: 2^3, 4^2, 0^0? Clique no botão e veja o resultado</p>
+        <button @click=calcular> Aperta, criança, tudo vai dar certo.</button>
+        <p v-html="resultado"> </p>
+    </div>
+</body>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: () => ({
+            resultado: "",
+        }),
+        methods: {
+            calcular() {
+                this.resultado = `2^3 = ${Math.pow(2, 3)};<br> 4^2 = ${Math.pow(4, 2)};<br> 0^0 = indefinido`
+            }
+        }
+    })
+</script>
+
+<style>
+    .imagem {
+        height: 60vh;
+
+    }
+
+
+    .texto {
+        color: mediumblue;
+        box-shadow: midnightblue;
+        /* text-align: center; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .link {
+        margin-bottom: 5vh;
+    }
+
+    .center {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: vh;
+    }
+
+    .welcome {
+        height: 40vh;
+    }
+</style>
+
+</html>
